@@ -4,6 +4,8 @@
 @import url(__enlargement/popup__enlargement.css);
 @import url(__item/popup__item.css);
 @import url(__name/popup__name.css);
+@import url(__tooltip-image/popup__tooltip-image.css);
+@import url(__tooltip-message/popup__tooltip-message.css);
 .popup {
     background: rgba(0, 0, 0, .5);
     display: flex;
