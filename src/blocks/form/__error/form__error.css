@@ -1,0 +1,12 @@
+.form__error {
+    color: red;
+    height: 17px;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+@media (max-width: 503px) {
+.form__error {
+    height: 27px;
+    }
+}

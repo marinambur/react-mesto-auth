@@ -1,0 +1,9 @@
+.card__text {
+    justify-content: space-between;
+    display: flex;
+    color: black;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    max-height: 79px;
+}

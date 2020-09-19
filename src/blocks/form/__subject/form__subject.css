@@ -1,0 +1,18 @@
+.form__subject {
+    padding: 29px 0 0;
+    border-style: none;
+    width: 358px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    padding-bottom: 5px;
+}
+
+@media (max-width: 503px) {
+    .form__subject {
+        width: 200px;
+        padding-top: 15px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}

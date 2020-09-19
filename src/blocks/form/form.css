@@ -1,0 +1,19 @@
+@import url(__save/form__save.css);
+@import url(__save/_inactive/form__save_inactive.css);
+@import url(__name/form__name.css);
+@import url(__subject/form__subject.css);
+@import url(__heading/form__heading.css);
+@import url(__error/form__error.css);
+@import url(__save/_sure/form__save_sure.css);
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 36px 0 36px;
+}
+
+@media (max-width: 530px) {
+    .form {
+        margin: 0 20px 0 20px;
+    }
+}

@@ -1,0 +1,19 @@
+.form__name {
+    padding: 54px 0 0;
+    border-style: none;
+    /*border-bottom: 1px solid rgba(0, 0, 0, .2);*/
+    width: 358px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    padding-bottom: 5px;
+}
+
+@media (max-width: 503px) {
+    .form__name {
+        width: 200px;
+        padding-top: 34px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}

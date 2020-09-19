@@ -1,0 +1,22 @@
+.card__heart {
+    border: none;
+    background: url(../../../images/heart.svg) center no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    height: 19px;
+    width: 21px;
+    right: 10px;
+    transition: 0.3s;
+    margin-top: 6.5px;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+    /*margin-right: 22px;*/
+    margin-top: -2px;
+    outline: none;
+}
+
+.card__heart:hover {
+    opacity: 0.6;
+}
+
