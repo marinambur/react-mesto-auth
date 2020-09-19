@@ -1,0 +1,15 @@
+
+.authorization__link {
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
+    background: #000000;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+.authorization__link:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
