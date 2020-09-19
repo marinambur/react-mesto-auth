@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from "./Header.js";
+import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import Footer from "./Footer.js";
 import Main from "./Main.js";
 import PopupWithForm from "./PopupWithForm";
@@ -8,9 +9,10 @@ import ImagePopup from "./ImagePopup.js";
 import EditAvatarPopup from "./EditAvatarPopup.js";
 import EditProfilePopup from "./EditProfilePopup.js";
 import AddPlacePopup from "./AddPlacePopup.js";
+import Login from './Login';
 import api from "../utils/Api";
 import {CurrentUserContext} from '../contexts/CurrentUserContext';
-
+import * as auth from '../utils/auth';
 
 function App() {
 
@@ -147,6 +149,13 @@ function App() {
                       onEditAvatar={handleEditAvatarClick} cards={cards}
                       onCardLike={handleCardLike} onCardDelete={handleCardDelete} onCardClick={handleCardClick}
                 />
+
+                    <Login
+                       // openInfoToolTip={handleInfoTooltipOpen}
+                      //  successInfoToolTip={handleSuccessInfoToolTip}
+                      //  handleLogin={handleLogin}
+                      //  checkToken={checkToken}
+                    />
 
                 <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups}
                                  onUpdateAvatar={handleUpdateAvatar}/>
