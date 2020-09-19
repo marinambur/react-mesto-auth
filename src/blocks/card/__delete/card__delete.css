@@ -1,0 +1,19 @@
+@import url(_invisible/card__delete_invisible.css);
+.card__delete {
+    border: none;
+    background: url(../../../images/Trash.svg) center no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    right: 10px;
+    transition: 0.3s;
+    position: absolute;
+    top: 18px;
+    display: flex;
+    right: 15px;
+}
+
+.card__delete:hover {
+    opacity: 0.6;
+}

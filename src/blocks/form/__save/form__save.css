@@ -1,0 +1,28 @@
+.form__save {
+    width: 358px;
+    height: 50.15px;
+    background-color: black;
+    color: white;
+    border-style: none;
+    margin-top: 25px;
+    border-radius: 2px;
+    margin-bottom: 36px;
+    outline: none;
+    margin-left: 36px;
+}
+
+.form__save:hover {
+    background: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+@media (max-width: 503px) {
+    .form__save {
+        width: 200px;
+        height: 40px;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 20px;
+    }
+}

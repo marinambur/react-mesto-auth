@@ -1,0 +1,28 @@
+.popup__enlargement {
+    display: flex;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    color: black;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 75vw;
+    max-height: 75vh;
+    flex-direction: column;
+    position: relative;
+}
+
+@media (max-width: 1070px) {
+    .popup__enlargement {
+        width: fit-content;
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 610px) {
+    .popup__enlargement {
+        max-width: 240px;
+        max-height: 350px;
+    }
+}
