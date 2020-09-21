@@ -55,7 +55,7 @@ function EditProfilePopup(props) {
                     onChange={handleNameChange}
                 />
             </fieldset>
-            <span id="name-input-error" className="form__error"></span>
+            <span id="name-input-error" className="form__error"/>
             <fieldset className="form__subject">
                 <input
                     className="text-form text-form_subject"
@@ -70,7 +70,7 @@ function EditProfilePopup(props) {
                     onChange={handleDescriptionChange}
                 />
             </fieldset>
-            <span id="profession-error" className="form__error"></span>
+            <span id="profession-error" className="form__error"/>
         </form>}
         />
 

@@ -1,12 +1,20 @@
 @import url(__logo/header__logo.css);
 @import url(__container/header__container.css);
+@import url(__link/header__link.css);
+@import url(__menu/header__menu.css);
+@import url(__exit/header__exit.css);
 .header {
     max-width: 1280px;
     margin: auto;
     border-bottom: 1px solid rgba(84, 84, 84, 0.7);
     width: 68.7%;
-    max-width: 882px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    line-height: 22px;
+    color: white;
 }
+
 
 @media (max-width: 700px) {
     .header {
