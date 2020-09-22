@@ -1,7 +1,6 @@
 import React from 'react';
 import {NavLink, useHistory} from 'react-router-dom';
-
-const BASE_URL = 'https://auth.nomoreparties.co';
+import {authorize} from "../utils/auth";
 
 function Login(props) {
     const {handleLogin, tokenCheck} = props;
@@ -19,29 +18,9 @@ function Login(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-
-        const authorize = (email, password) => {
-            return fetch(`${BASE_URL}/signin`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({email, password})
-            })
-                .then((res) => {
-                    if (res.ok) {
-                        return res.json();
-                    }
-                    return res.json().then((data) => Promise.reject(`${res.status} - ${data.error || 'пользователь с email не найден'}`));
-                })
-                .catch((err) => console.log(err));
-        };
-
-
         if (!email || !password) {
             return;
         }
-
         authorize(email, password)
             .then((data) => {
                 if (data.token) {
@@ -64,6 +43,7 @@ function Login(props) {
                 <input
                     onChange={handleChangeEmail}
                     type="email"
+                    value={email}
                     className="authorization__input"
                     id="email"
                     name="email"

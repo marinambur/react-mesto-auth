@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavLink, useHistory} from 'react-router-dom';
-export const BASE_URL = 'https://auth.nomoreparties.co';
+import {register} from "../utils/auth";
+
 
 function Register(props) {
     const {rightInfoToolTip, openInfoToolTip} = props;
@@ -16,22 +17,6 @@ function Register(props) {
         setPassword(e.target.value);
     }
 
-    const register = (email, password) => {
-        return fetch(`${BASE_URL}/signup`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-        })
-            .then((res) => {
-                if(res.ok) {
-                    return res.json();
-                }
-                return res.json().then((data) => Promise.reject(`${res.status} - ${data.error || 'Ошибка'}`));
-            })
-            .catch((err) => console.log(err));
-    };
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -39,7 +24,6 @@ function Register(props) {
             .then((res) => {
                 if (res) {
                     rightInfoToolTip();
-                    setTimeout(openInfoToolTip, 1000);
                     history.push('/sign-in');
                 } else {
                     openInfoToolTip();
@@ -59,6 +43,7 @@ function Register(props) {
                     className="authorization__input"
                     id="email"
                     name="email"
+                    value={email}
                     required
                     placeholder="Email"
                 />
@@ -68,6 +53,7 @@ function Register(props) {
                     className="authorization__input"
                     id="password"
                     name="password"
+                    value={password}
                     required
                     placeholder="Пароль"
                     pattern="[A-Za-zА-Яа-яЁё0-9 -]{2,40}"

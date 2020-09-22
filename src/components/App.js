@@ -7,6 +7,8 @@ import Login from './Login';
 import InfoTooltip from './InfoTooltip';
 import ProtectedRoute from './ProtectedRoute';
 import AllCards from "./AllCards";
+import {getToken} from "../utils/auth";
+
 const BASE_URL = 'https://auth.nomoreparties.co';
 
 
@@ -38,23 +40,6 @@ function App() {
         setLoggedIn(false);
         history.push('/sign-in');
     }
-
-    const getToken = (token) => {
-        return fetch(`${BASE_URL}/users/me`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
-            }
-        })
-            .then((res) => {
-                if(res.ok) {
-                    return res.json();
-                }
-                return res.json().then((data) => Promise.reject(`${res.status} - ${data.error || 'токен не передан или передан не в том формате'}`));
-            })
-            .catch((err) => console.log(err));
-    };
 
     function tokenCheck() {
         const token = localStorage.getItem('token');
