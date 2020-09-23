@@ -8,13 +8,14 @@ export const authorize = (email, password) => {
         },
         body: JSON.stringify({email, password})
     })
-        .then((res) => {
+        .then(res => {
             if (res.ok) {
                 return res.json();
             }
-            return res.json().then((data) => Promise.reject(`${res.status} - ${data.error || 'пользователь с email не найден'}`));
+            else {
+                return Promise.reject(res.status)
+            }
         })
-        .catch((err) => console.log(err));
 };
 
 export const register = (email, password) => {
@@ -51,3 +52,5 @@ export const getToken = (token) => {
         })
         .catch((err) => console.log(err));
 };
+
+

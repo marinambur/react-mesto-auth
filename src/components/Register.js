@@ -1,13 +1,12 @@
 import React from 'react';
-import {NavLink, useHistory} from 'react-router-dom';
-import {register} from "../utils/auth";
+import {NavLink} from 'react-router-dom';
+
 
 
 function Register(props) {
-    const {rightInfoToolTip, openInfoToolTip} = props;
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
-    const history = useHistory();
+
 
     function handleChangeEmail(e) {
         setEmail(e.target.value);
@@ -18,23 +17,15 @@ function Register(props) {
     }
 
 
-    function handleSubmit(e) {
+    const handleSignupSubmit = (e) => {
         e.preventDefault();
-        register(email, password)
-            .then((res) => {
-                if (res) {
-                    rightInfoToolTip();
-                    history.push('/sign-in');
-                } else {
-                    openInfoToolTip();
-                }
-            });
+        props.onSignup(email, password);
     }
 
 
     return (
         <div className="authorization">
-            <form onSubmit={handleSubmit} className="authorization__form" id="register">
+            <form onSubmit={handleSignupSubmit} className="authorization__form" id="register">
                 <h2 className="authorization__title">Регистрация</h2>
                 <input
 
