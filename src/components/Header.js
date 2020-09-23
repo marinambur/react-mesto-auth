@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink, Link, Route } from 'react-router-dom';
 import logo from '../images/logo.svg';
 
 function Header(props) {
@@ -13,7 +13,7 @@ function Header(props) {
                 <NavLink className="header__link" to="/sign-in">Войти</NavLink>
             </Route>
             <Route path="/sign-in">
-                <NavLink className="header__link" to="/sign-up">Регистрация</NavLink>
+                <Link className="header__link" to="/sign-up">Регистрация</Link>
             </Route>
             <Route path="/cards">
                 <p className="header__email">{loggedInEmail}</p>
